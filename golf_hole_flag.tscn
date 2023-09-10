@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvekf1vhnogj1"]
+
+[ext_resource type="Script" path="res://golf_hole_flag_GDS.gd" id="1_j2cxu"]
+[ext_resource type="Texture2D" uid="uid://gfea3swg527s" path="res://BadGolfTexture.png" id="1_l1jo0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsi5e"]
+size = Vector2(2, 1)
+
+[node name="GolfHoleFlag" type="StaticBody2D"]
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_j2cxu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0, -1)
+texture = ExtResource("1_l1jo0")
+offset = Vector2(0, -8)
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(-3, -2.5)
+shape = SubResource("RectangleShape2D_lsi5e")
