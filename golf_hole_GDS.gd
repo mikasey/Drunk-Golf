@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var sprite = $Sprite2D
 
-signal in_hole
+signal in_hole()
 
 var is_hole_full = false
 var is_hole_bad = false
@@ -22,8 +22,8 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if((is_hole_full == false) and body.is_in_group("GolfBall")):
-		in_hole.emit()
 		score = body.score
+		in_hole.emit()
 		body.queue_free()
 		
 		
